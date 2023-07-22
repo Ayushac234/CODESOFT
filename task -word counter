@@ -1,0 +1,43 @@
+import java.io.*;
+class GFG
+{
+	public static int
+	countWords(String str)
+	{
+			if(str == null || str.isEmpty())
+			return 0;
+		int wordCount = 0;
+		boolean isWord = false;
+		int endOfLine = str.length() - 1;
+		
+		char[] ch = str.toCharArray();
+		
+		for (int i = 0; i < ch.length; i++) {
+			if (Character.isLetter(ch[i])
+				&& i != endOfLine)
+		isWord = true;
+			
+			
+			else if (!Character.isLetter(ch[i])
+					&& isWord) {
+			
+				wordCount++;
+				isWord = false;
+			}
+			
+		
+			else if (Character.isLetter(ch[i])
+					&& i == endOfLine)
+				wordCount++;
+		}
+		return wordCount;
+		
+	}
+	
+
+	public static void main(String args[])
+	{
+			String str =	"One two	 three\n four\tfive ";
+		System.out.println("No of words : " +countWords(str));
+	}
+}
