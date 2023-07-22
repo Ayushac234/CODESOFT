@@ -1,5 +1,5 @@
 import java.io.*;
-class GFG
+class wordcounter
 {
 	public static int
 	countWords(String str)
